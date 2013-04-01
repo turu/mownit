@@ -1,0 +1,3 @@
+set yrange [-3:3]
+plot 'zad5_1' using 1:2 with linespoints, 'zad5_2' using 1:2 with linespoints, 'zad5_3' using 1:2 with linespoints, exp(-15*x) with lines
+pause -1
