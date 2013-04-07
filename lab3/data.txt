@@ -1,0 +1,118 @@
+[turu@turu lab3]$ ./mac.out 4 10
+
+Proste mnozenie srednio zajelo 1.700000 usec
+	Odchylenie standardowe 0.674949 usec
+
+Ulepszone mnozenie srednio zajelo 1.700000 usec
+	Odchylenie standardowe 0.483046 usec
+
+BLAS mnozenie srednio zajelo 3.000000 usec
+	Odchylenie standardowe 4.944132 usec
+
+
+[turu@turu lab3]$ ./mac.out 10 10
+
+Proste mnozenie srednio zajelo 26.600000 usec
+	Odchylenie standardowe 10.699948 usec
+
+Ulepszone mnozenie srednio zajelo 23.700000 usec
+	Odchylenie standardowe 0.674949 usec
+
+BLAS mnozenie srednio zajelo 8.100000 usec
+	Odchylenie standardowe 5.258855 usec
+
+[turu@turu lab3]$ ./mac.out 30 10
+
+Proste mnozenie srednio zajelo 253.600000 usec
+	Odchylenie standardowe 194.361747 usec
+
+Ulepszone mnozenie srednio zajelo 160.500000 usec
+	Odchylenie standardowe 9.902301 usec
+
+BLAS mnozenie srednio zajelo 31.100000 usec
+	Odchylenie standardowe 2.469818 usec
+
+[turu@turu lab3]$ ./mac.out 40 10
+
+Proste mnozenie srednio zajelo 503.900000 usec
+	Odchylenie standardowe 337.159194 usec
+
+Ulepszone mnozenie srednio zajelo 408.600000 usec
+	Odchylenie standardowe 67.993791 usec
+
+BLAS mnozenie srednio zajelo 87.900000 usec
+	Odchylenie standardowe 16.795833 usec
+
+
+[turu@turu lab3]$ ./mac.out 60 10
+
+Proste mnozenie srednio zajelo 1863.400000 usec
+	Odchylenie standardowe 1287.645500 usec
+
+Ulepszone mnozenie srednio zajelo 1290.100000 usec
+	Odchylenie standardowe 54.013270 usec
+
+BLAS mnozenie srednio zajelo 219.800000 usec
+	Odchylenie standardowe 11.083521 usec
+
+[turu@turu lab3]$ ./mac.out 80 10
+
+Proste mnozenie srednio zajelo 3207.900000 usec
+	Odchylenie standardowe 471.663357 usec
+
+Ulepszone mnozenie srednio zajelo 3111.700000 usec
+	Odchylenie standardowe 93.806005 usec
+
+BLAS mnozenie srednio zajelo 480.900000 usec
+	Odchylenie standardowe 16.729548 usec
+
+[turu@turu lab3]$ ./mac.out 90 10
+
+Proste mnozenie srednio zajelo 4540.100000 usec
+	Odchylenie standardowe 808.211805 usec
+
+Ulepszone mnozenie srednio zajelo 4231.600000 usec
+	Odchylenie standardowe 113.805097 usec
+
+BLAS mnozenie srednio zajelo 657.300000 usec
+	Odchylenie standardowe 20.149717 usec
+
+[turu@turu lab3]$ ./mac.out 100 10
+
+Proste mnozenie srednio zajelo 6254.400000 usec
+	Odchylenie standardowe 1442.513639 usec
+
+Ulepszone mnozenie srednio zajelo 5785.600000 usec
+	Odchylenie standardowe 75.342477 usec
+
+BLAS mnozenie srednio zajelo 887.600000 usec
+	Odchylenie standardowe 29.952555 usec
+
+
+[turu@turu lab3]$ ./mac.out 120 10
+
+Proste mnozenie srednio zajelo 11038.200000 usec
+	Odchylenie standardowe 1690.704902 usec
+
+Ulepszone mnozenie srednio zajelo 10011.700000 usec
+	Odchylenie standardowe 309.970626 usec
+
+BLAS mnozenie srednio zajelo 1504.000000 usec
+	Odchylenie standardowe 53.894960 usec
+
+[turu@turu lab3]$ ./mac.out 250 10
+
+Proste mnozenie srednio zajelo 94467.400000 usec
+	Odchylenie standardowe 840.240733 usec
+
+Ulepszone mnozenie srednio zajelo 87878.700000 usec
+	Odchylenie standardowe 894.310541 usec
+
+[turu@turu lab3]$ ./mac.out 500 10
+
+Proste mnozenie srednio zajelo 1022539.600000 usec
+	Odchylenie standardowe 20445.719162 usec
+
+Ulepszone mnozenie srednio zajelo 707689.900000 usec
+	Odchylenie standardowe 23359.629475 usec
+

@@ -157,7 +157,7 @@ int main(int argc, char *argv[]){
     printf("\nBLAS mnozenie srednio zajelo %f usec\n",gsl_stats_mean(times, 1, iters));
     printf("\tOdchylenie standardowe %f usec\n",gsl_stats_sd(times, 1, iters));
 
-    free(flatA);
+    /*free(flatA);
     free(flatB);
     free(flatC);
 
@@ -172,7 +172,7 @@ int main(int argc, char *argv[]){
     free(a);
     free(b);
     free(c);
-    putchar('c');
+    putchar('c');*/
 
     return 0;
 }
