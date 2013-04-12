@@ -1,37 +1,33 @@
+#include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
 #include <gsl/gsl_integration.h>
-#include <time.h>
-#include<unistd.h>
-#include<sys/time.h>
-#include<sys/resource.h>
+#include <gsl/gsl_statistics.h>
 
-void printStats(int i, struct rusage* r2, struct rusage* r1, struct timeval* t2, struct timeval* t1) {
-	printf("Punkt kontrolny %d\n",i);
-	printf("Aktualne dane.\nPomiar czasu\n");
-	printf("rzeczywisty: %ld[s] %ld[us]\n",(long int)t2->tv_sec,(long int)t2->tv_usec);
-	printf("uzytkownika: %ld[s] %ld[us]\n",(long int)r2->ru_utime.tv_sec,(long int)r2->ru_utime.tv_usec);
-	printf("systemowy: %ld[s] %ld[us]\n",(long int)r2->ru_stime.tv_sec,(long int)r2->ru_stime.tv_usec);
-	printf("\n\n");
+#define TRIES 100
+#define MAXSTEPS 100
 
-	if (i!=1) {
-		printf("Odniesienie do punktu kontrolnego %d\n",i-1);
-		printf("Czasy wykonania:\n");
-        printf("rzeczywisty: %lf[s]\n", (double)(t2->tv_sec*1000000 + t2->tv_usec - t1->tv_sec*1000000 - t1->tv_usec)/1000000);
-        printf("uzytkownika: %lf[s]\n", (double)(r2->ru_utime.tv_sec*1000000 + r2->ru_utime.tv_usec - r1->ru_utime.tv_sec*1000000 -
-				r1->ru_utime.tv_usec) / 1000000);
-        printf("systemowy: %lf[s]\n", (double)(r2->ru_stime.tv_sec*1000000 + r2->ru_stime.tv_usec - r1->ru_stime.tv_sec*1000000 -
-                r1->ru_stime.tv_usec) / 1000000);
-		printf("\n\n");
-	}
+double f(double x){
+    return 3*(x*x-2*x);
 }
 
-double rect_integration( double (*fn)(double x), double from, double to, int steps )
-{
-    if (from >= to)
-    {
-        printf("%f must be smaller than %f", from, to);
 
+double g(double x){
+    return  cos(100*x);
+}
+
+
+double h(double x){
+    return  log(x) / sqrt(x);
+}
+
+
+double k(double x){
+    return  sin(x*2)/x;
+}
+
+double rectIntegration( double (*fn)(double x), double from, double to, int steps ) {
+    if (from >= to){
+        printf("%f must be smaller than %f", from, to);
     }
 
     double delta = (double) (to - from) / steps;
@@ -46,45 +42,85 @@ double rect_integration( double (*fn)(double x), double from, double to, int ste
     return sum;
 }
 
-double x_2(double x)
-{
-    return x*x;
+int computeNumberOfSteps(double (*f)(double), double a, double b, double error) {
+    double prev = rectIntegration(f, a, b, 1);
+    double cur  = rectIntegration(f, a, b, 2);
+    int res = 2;
+
+    while (fabs(cur - prev) > error) {
+        res++;
+        prev = cur;
+        cur = rectIntegration(f, a, b, res);
+    }
+
+    return res;
 }
 
-int main()
-{
-    struct rusage p1r, p2r;
-    struct timeval p1t, p2t;
+struct timeval stop, start;
 
-    gettimeofday(&p1t, NULL);
-    getrusage(RUSAGE_SELF, &p1r);
-    printStats(1, &p1r, NULL, &p1t, NULL);
+int main(int argc, char ** argv) {
+    double error = atof(argv[1]);
+    double a = atof(argv[2]);
+    double b = atof(argv[3]);
 
-    printf("%lf\n", rect_integration( &x_2, 0, 10, 1000) );
+    int steps = computeNumberOfSteps(f, a, b, error);
+    printf("Dla zadanego bledu potrzeba wykonac %d krokow, wynik = %lf\n", steps,
+           rectIntegration(f, a, b, steps));
 
-    gettimeofday(&p2t, NULL);
-    getrusage(RUSAGE_SELF, &p2r);
-    printStats(2, &p2r, &p1r, &p2t, &p1t);
+    double times[TRIES];
+    int l = TRIES;
 
-    gsl_integration_workspace * w = gsl_integration_workspace_alloc (1000);
-
-    double result, error;
-    double expected = (double) 1000.0/3.0;
-    double alpha = 1.0;
+    while (l--) {
+        gettimeofday(&start, NULL);
+        rectIntegration(f, a, b, steps);
+        gettimeofday(&stop, NULL);
+        times[l]=(double)(stop.tv_usec-start.tv_usec);
+    }
+    printf("Wyliczenie calki f metoda prostokatow zajelo srednio %f usec\n\n", gsl_stats_mean(times, 1, TRIES));
 
     gsl_function F;
-    F.function = &x_2;
-    F.params = &alpha;
+    F.function = &f;
+    size_t gsteps;
+    double result, acterror;
+    gsl_integration_qng(&F, a, b, 0, error, &result, &acterror, &gsteps);
+    printf("Wyliczenie calki f metoda QNG dalo wynik %f i wymagalo %d krokow\n", result, gsteps);
 
-    gsl_integration_qags(&F, 0, 10, 0, 1e-7, 1000, w, &result, &error);
+    l = TRIES;
+    while (l--) {
+        gettimeofday(&start, NULL);
+        gsl_integration_qng(&F, 0, 1, error, 0, &result, &acterror, &gsteps);
+        gettimeofday(&stop, NULL);
+        times[l]=(double)(stop.tv_usec-start.tv_usec);
+    }
+    printf("Zajelo srednio %f usec\n",gsl_stats_mean(times, 1, TRIES));
+    printf("Wynik dokladny = %f\n\n", -2.0);
 
-    printf ("result          = % .18f\n", result);
-    printf ("exact result    = % .18f\n", expected);
-    printf ("estimated error = % .18f\n", error);
-    printf ("actual error    = % .18f\n", result - expected);
-    printf ("intervals =  %d\n", w->size);
+    F.function = &k;
+    printf("Calkowanie adaptacyjne\n");
+    gsl_integration_workspace * w = gsl_integration_workspace_alloc(MAXSTEPS);
+    gsl_integration_qag(&F, 0.01, 100, error, 0, MAXSTEPS, 1, w, &result, &acterror);
+    printf("Dla ilosci krokow:\t%d\n", MAXSTEPS);
+    printf("gsl(QAG):\t%.36lf\tkroków: %d\n", result, MAXSTEPS);
+    printf("trapestry:\t%.36lf\tkroków: %d\n", rectIntegration(k, 0.01, 100, MAXSTEPS), MAXSTEPS);
+    printf("wolfram\t\t%f\n\n",1.54838);
 
-    gsl_integration_workspace_free(w);
+    F.function = &h;
+    printf("Calkowanie z osobliwosciami\n");
+    gsl_integration_qags(&F, 0, 1, error, 0, MAXSTEPS, w, &result, &acterror);
+    printf("Dla ilosci krokow:\t%d\n", MAXSTEPS);
+    printf("gsl(QAGS):\t%.36lf\tkroków: %d\n",result, MAXSTEPS);
+    printf("trapestry:\t%.36lf\tkroków: %d\n", rectIntegration(h,0,1,MAXSTEPS),MAXSTEPS);
+    printf("wolfram\t\t%f\n\n",-4.0);
+
+    F.function = &g;
+    printf("Calkowanie dla funkcji oscylacyjnych\n");
+    //gsl_integration_qawo(&F, 0, 1, ERROR, 0, POINTS, w,&result, &error);
+    gsl_integration_qawo_table *table = gsl_integration_qawo_table_alloc(100, 1, GSL_INTEG_COSINE, MAXSTEPS);
+    gsl_integration_qawo(&F, 0, error, 0, MAXSTEPS, w, table, &result, &acterror);
+    printf("Dla ilosci krokow:\t%d\n",MAXSTEPS);
+    printf("gsl(QAGS):\t%.36lf\tkroków: %d\n",result,MAXSTEPS);
+    printf("trapestry:\t%.36lf\tkroków: %d\n",rectIntegration(g,0,1,MAXSTEPS),MAXSTEPS);
+    printf("wolfram\t\t%f",-.00506366);
 
     return 0;
 }
