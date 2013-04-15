@@ -23,7 +23,7 @@ double h(double x) {
 
 
 double k(double x){
-    return  sin(x*2)/x;
+    return 7 * x * (cos(13 * x) + sin(x));
 }
 
 double rectIntegration( double (*fn)(double x), double from, double to, int steps ) {
@@ -108,7 +108,7 @@ int main(int argc, char ** argv) {
     printf("Funkcja QAG:           %.10lf\n", result);
     printf("Zajelo %f usec\n", (double)(stop.tv_usec-start.tv_usec));
     gettimeofday(&start, NULL);
-    printf("Metoda prostokatow:    %.10lf\n", rectIntegration(k, a, b, MAXSTEPS));
+    printf("Metoda prostokatow:    %.10lf\n", rectIntegration(g, a, b, MAXSTEPS));
     gettimeofday(&stop, NULL);
     printf("Zajelo %f usec\n", (double)(stop.tv_usec-start.tv_usec));
 
@@ -125,9 +125,17 @@ int main(int argc, char ** argv) {
     printf("Zajelo %f usec\n", (double)(stop.tv_usec-start.tv_usec));
 
     printf("\nCalkowanie dla funkcji oscylacyjnych\n");
-    F.function = &g;
+    F.function = &k;
+    gettimeofday(&start, NULL);
+    gsl_integration_qawo_table * wf = gsl_integration_qawo_table_alloc(1, M_PI, GSL_INTEG_COSINE, MAXSTEPS);
+    gsl_integration_qawo(&F, 0.0, error, error, MAXSTEPS, w, wf, &result, &acterror);
+    gettimeofday(&stop, NULL);
     printf("Funkcja QAWO:          %.10lf\n", result);
-    printf("Metdoa prostokatow:    %.10lf\n", rectIntegration(g, 0, 1, MAXSTEPS));
+    printf("Zajelo %f usec\n", (double)(stop.tv_usec-start.tv_usec));
+    gettimeofday(&start, NULL);
+    printf("Metdoa prostokatow:    %.10lf\n", rectIntegration(k, 0, 1, MAXSTEPS));
+    gettimeofday(&stop, NULL);
+    printf("Zajelo %f usec\n", (double)(stop.tv_usec-start.tv_usec));
 
     return 0;
 }
