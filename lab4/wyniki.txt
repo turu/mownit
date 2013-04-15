@@ -1,0 +1,20 @@
+[turu@turu lab4]$ ./zad1.out 0.0001 0 1
+Podstawowe calkowanie.
+Dla zadanego bledu potrzeba wykonac 12249 krokow, wynik = 3.333456
+Wyliczenie calki f metoda prostokatow zajelo srednio 206.880000 usec
+
+Wyliczenie calki f metoda QNG dalo wynik 3.333333 i wymagalo 21 krokow
+Zajelo srednio 0.320000 usec
+
+Calkowanie adaptacyjne
+Funkcja QAG:           1.0000002337
+Zajelo 159.000000 usec
+Metoda prostokatow:    1.5999449506
+Zajelo 10.000000 usec
+
+Calkowanie z osobliwosciami
+Funkcja QAGS:          2.0000000000
+Zajelo 12.000000 usec
+Metoda prostokatow:    inf
+Zajelo 7.000000 usec
+
