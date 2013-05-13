@@ -1,0 +1,119 @@
+# depslib dependency file v1.0
+1324763880 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\csystem.cpp
+	<iostream>
+	<direct.h>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CSystem.h"
+	"CFlags.h"
+
+1324683501 
+
+1324295117 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\vector.h
+	<iostream>
+	<iterator>
+	<vector>
+
+1324676995 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\cbody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1324677062 "
+
+1324683501 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\csystem.h
+	<iostream>
+	<vector>
+	<direct.h>
+	"CVector.h"
+	"ICSystem.h"
+	"CBody.h"
+
+1325626561 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\main.cpp
+	<cstdlib>
+	<cstdio>
+	<iostream>
+	<cmath>
+	"CVector.h"
+	"CFlags.h"
+
+1324683483 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\icsystem.h
+	"CVector.h"
+	"ICBody.h"
+
+1324677032 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\icbody.h
+	<iostream>
+	<string>
+	"CVector.h"
+
+1324763832 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\cbody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CBody.h"
+	"CFlags.h"
+
+1324677090 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\cvector.h
+	<iterator>
+
+1324677062 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\cvector.cpp
+	<iostream>
+	<iterator>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"CVector.h"
+
+1325629290 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\cflags.h
+
+1324764383 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_console\cflags.cpp
+	"CFlags.h"
+
+1324764383 source:/home/turu/Pulpit/projekty/CSim/CSim_console/CFlags.cpp
+	"CFlags.h"
+
+1325629290 /home/turu/Pulpit/projekty/CSim/CSim_console/CFlags.h
+
+1324677062 source:/home/turu/Pulpit/projekty/CSim/CSim_console/CVector.cpp
+	<iostream>
+	<iterator>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"CVector.h"
+
+1324677090 /home/turu/Pulpit/projekty/CSim/CSim_console/CVector.h
+	<iterator>
+
+1324764383 source:/home/turu/mownit/lab7/CSim/CSim_console/CFlags.cpp
+	"CFlags.h"
+
+1325629290 /home/turu/mownit/lab7/CSim/CSim_console/CFlags.h
+
+1324677062 source:/home/turu/mownit/lab7/CSim/CSim_console/CVector.cpp
+	<iostream>
+	<iterator>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"CVector.h"
+
+1324677090 /home/turu/mownit/lab7/CSim/CSim_console/CVector.h
+	<iterator>
+
+1325889298 source:/home/turu/mownit/lab7/CSim/CSim_console/main.cpp
+	<cstdlib>
+	<cstdio>
+	<iostream>
+	<cmath>
+	"CVector.h"
+	"CFlags.h"
+

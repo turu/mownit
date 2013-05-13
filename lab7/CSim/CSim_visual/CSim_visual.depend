@@ -1,0 +1,1121 @@
+# depslib dependency file v1.0
+1324683555 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cplayer.cpp
+	<iostream>
+	<direct.h>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CPlayer.h"
+
+1325626615 "
+
+1324677090 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cvector.h
+	<iterator>
+
+1325622328 
+
+1324683538 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cplayer.h
+	<iostream>
+	<vector>
+	<direct.h>
+	"CVector.h"
+	"ICSystem.h"
+	"CRepBody.h"
+
+1324676912 h"
+
+1324683483 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\icsystem.h
+	"CVector.h"
+	"ICBody.h"
+
+1324677032 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\icbody.h
+	<iostream>
+	<string>
+	"CVector.h"
+
+1324676937 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\crepbody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1324676912 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\crepbody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CRepBody.h"
+
+1325352613 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\csystem.cpp
+	<iostream>
+	<direct.h>
+	<string>
+	<cstdlib>
+	<fstream>
+	<omp.h>
+	"CVector.h"
+	"CSystem.h"
+	"CFlags.h"
+
+1325107046 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\csystem.h
+	<iostream>
+	<vector>
+	<deque>
+	<direct.h>
+	"CVector.h"
+	"ICSystem.h"
+	"CBody.h"
+
+1325108833 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cbody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1324677062 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cvector.cpp
+	<iostream>
+	<iterator>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"CVector.h"
+
+1325108015 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cbody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CBody.h"
+	"CFlags.h"
+
+1325352046 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\main.cpp
+	<cstdlib>
+	<cstring>
+	<SDL.h>
+	<iostream>
+	<cmath>
+	<unistd.h>
+	<omp.h>
+	"CVector.h"
+	"CFlags.h"
+	"ICSystem.h"
+	"CSystem.h"
+	"CPlayer.h"
+	"CEngine.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 e.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1255796864 c:\sdl-1.2.14\include\sdl\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_platform.h
+
+1255796850 c:\sdl-1.2.14\include\sdl\begin_code.h
+
+1255796850 c:\sdl-1.2.14\include\sdl\close_code.h
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_keysym.h
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1255796850 .h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1255796864 c:\sdl-1.2.14\include\sdl_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1255796850 c:\sdl-1.2.14\include\sdl_platform.h
+
+1255796850 c:\sdl-1.2.14\include\begin_code.h
+
+1255796850 c:\sdl-1.2.14\include\close_code.h
+
+1255796849 c:\sdl-1.2.14\include\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_keysym.h
+
+1255796850 c:\sdl-1.2.14\include\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796849 c:\sdl-1.2.14\include\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1324932586 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cengine.h
+	<cstdlib>
+	<iostream>
+	<SDL.h>
+	<gl/gl.h>
+	<gl/glu.h>
+	"ICSystem.h"
+	"CVector.h"
+	"CFlags.h"
+	"Camera.h"
+
+1255796850 c:\sdl-1.2.14\include\sdl_opengl.h
+	"SDL_config.h"
+	<windows.h>
+	<OpenGL/gl.h>
+	<OpenGL/glu.h>
+	<gl.h>
+	<glu.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<windows.h>
+	<stddef.h>
+
+1325365403 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cengine.cpp
+	<iostream>
+	<string>
+	<SDL.h>
+	<gl/gl.h>
+	<gl/glu.h>
+	<cmath>
+	<omp.h>
+	"CEngine.h"
+	"CFlags.h"
+
+1324764332 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cflags.h
+
+1324764383 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\cflags.cpp
+	"CFlags.h"
+
+1324862463 c:\users\piotrek\desktop\projekty\fizyka\csim_visual\camera.h
+	"CVector.h"
+
+1324865042 source:c:\users\piotrek\desktop\projekty\fizyka\csim_visual\camera.cpp
+	"Camera.h"
+
+1325622547 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cbody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CBody.h"
+	"CFlags.h"
+
+1325623616 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cvector.h
+	<iterator>
+
+1325622538 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cbody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1324683483 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\icsystem.h
+	"CVector.h"
+	"ICBody.h"
+
+1324677032 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\icbody.h
+	<iostream>
+	<string>
+	"CVector.h"
+
+1325629267 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cflags.h
+
+1325365403 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cengine.cpp
+	<iostream>
+	<string>
+	<SDL.h>
+	<gl/gl.h>
+	<gl/glu.h>
+	<cmath>
+	<omp.h>
+	"CEngine.h"
+	"CFlags.h"
+
+1324932586 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cengine.h
+	<cstdlib>
+	<iostream>
+	<SDL.h>
+	<gl/gl.h>
+	<gl/glu.h>
+	"ICSystem.h"
+	"CVector.h"
+	"CFlags.h"
+	"Camera.h"
+
+1324862463 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\camera.h
+	"CVector.h"
+
+1324764383 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cflags.cpp
+	"CFlags.h"
+
+1324683555 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cplayer.cpp
+	<iostream>
+	<direct.h>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CPlayer.h"
+
+1324683538 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cplayer.h
+	<iostream>
+	<vector>
+	<direct.h>
+	"CVector.h"
+	"ICSystem.h"
+	"CRepBody.h"
+
+1324676937 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\crepbody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1324676912 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\crepbody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CRepBody.h"
+
+1325628852 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\csystem.cpp
+	<iostream>
+	<direct.h>
+	<string>
+	<cstdlib>
+	<fstream>
+	<omp.h>
+	"CVector.h"
+	"CSystem.h"
+	"CFlags.h"
+
+1325622328 c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\csystem.h
+	<iostream>
+	<vector>
+	<deque>
+	<direct.h>
+	"CVector.h"
+	"ICSystem.h"
+	"CBody.h"
+
+1325623611 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\cvector.cpp
+	<iostream>
+	<iterator>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"CVector.h"
+
+1324865042 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\camera.cpp
+	"Camera.h"
+
+1325626615 source:c:\users\piotrek\desktop\projekty\fizyka\csim\csim_visual\main.cpp
+	<cstdlib>
+	<cstring>
+	<SDL.h>
+	<iostream>
+	<cmath>
+	<unistd.h>
+	<omp.h>
+	"CVector.h"
+	"CFlags.h"
+	"ICSystem.h"
+	"CSystem.h"
+	"CPlayer.h"
+	"CEngine.h"
+
+1326241961 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/CBody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CBody.h"
+	"CFlags.h"
+
+1326242520 /home/turu/Pulpit/projekty/CSim/CSim_visual/CVector.h
+	<iterator>
+
+1326241987 /home/turu/Pulpit/projekty/CSim/CSim_visual/CBody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1325900932 /home/turu/Pulpit/projekty/CSim/CSim_visual/ICSystem.h
+	"CVector.h"
+	"ICBody.h"
+
+1324677032 /home/turu/Pulpit/projekty/CSim/CSim_visual/ICBody.h
+	<iostream>
+	<string>
+	"CVector.h"
+
+1325629267 /home/turu/Pulpit/projekty/CSim/CSim_visual/CFlags.h
+
+1326029359 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/CEngine.cpp
+	<iostream>
+	<string>
+	<SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<cmath>
+	<omp.h>
+	"CEngine.h"
+	"CFlags.h"
+
+1301616952 /usr/include/SDL/SDL.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_audio.h"
+	"SDL_cdrom.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_loadso.h"
+	"SDL_mutex.h"
+	"SDL_rwops.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_video.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_config.h
+	"SDL_platform.h"
+	<stdarg.h>
+
+1301616952 /usr/include/SDL/SDL_platform.h
+
+1301616952 /usr/include/SDL/begin_code.h
+
+1301616952 /usr/include/SDL/close_code.h
+
+1301616952 /usr/include/SDL/SDL_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_endian.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_cdrom.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_cpuinfo.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_active.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_quit.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_active.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keysym.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_keysym.h
+
+1301616952 /usr/include/SDL/SDL_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_video.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1301616952 /usr/include/SDL/SDL_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1301616952 /usr/include/SDL/SDL_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1325898201 /home/turu/Pulpit/projekty/CSim/CSim_visual/CEngine.h
+	<cstdlib>
+	<iostream>
+	<SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"ICSystem.h"
+	"CVector.h"
+	"CFlags.h"
+	"Camera.h"
+
+1325898386 /home/turu/Pulpit/projekty/CSim/CSim_visual/Camera.h
+	"CVector.h"
+
+1324764383 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/CFlags.cpp
+	"CFlags.h"
+
+1326031849 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/CPlayer.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CPlayer.h"
+
+1326031720 /home/turu/Pulpit/projekty/CSim/CSim_visual/CPlayer.h
+	<iostream>
+	<deque>
+	"CVector.h"
+	"ICSystem.h"
+	"CRepBody.h"
+
+1325902347 /home/turu/Pulpit/projekty/CSim/CSim_visual/CRepBody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1325902472 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/CRepBody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CRepBody.h"
+
+1326243192 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/CSystem.cpp
+	<iostream>
+	<sys/types.h>
+	<sys/stat.h>
+	<string>
+	<cstdlib>
+	<fstream>
+	<omp.h>
+	"CVector.h"
+	"CSystem.h"
+	"CFlags.h"
+
+1326242031 /home/turu/Pulpit/projekty/CSim/CSim_visual/CSystem.h
+	<iostream>
+	<vector>
+	<deque>
+	<fstream>
+	"CVector.h"
+	"ICSystem.h"
+	"CBody.h"
+
+1326242553 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/CVector.cpp
+	<iostream>
+	<iterator>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"CVector.h"
+
+1325898683 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/Camera.cpp
+	"Camera.h"
+
+1326221217 source:/home/turu/Pulpit/projekty/CSim/CSim_visual/main.cpp
+	<cstdlib>
+	<cstring>
+	<SDL.h>
+	<iostream>
+	<cmath>
+	<unistd.h>
+	<omp.h>
+	"CVector.h"
+	"CFlags.h"
+	"ICSystem.h"
+	"CSystem.h"
+	"CPlayer.h"
+	"CEngine.h"
+
+1326241961 source:/home/turu/mownit/lab7/CSim_visual/CBody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CBody.h"
+	"CFlags.h"
+
+1326242520 /home/turu/mownit/lab7/CSim_visual/CVector.h
+	<iterator>
+
+1326241987 /home/turu/mownit/lab7/CSim_visual/CBody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1325900932 /home/turu/mownit/lab7/CSim_visual/ICSystem.h
+	"CVector.h"
+	"ICBody.h"
+
+1324677032 /home/turu/mownit/lab7/CSim_visual/ICBody.h
+	<iostream>
+	<string>
+	"CVector.h"
+
+1325629267 /home/turu/mownit/lab7/CSim_visual/CFlags.h
+
+1326029359 source:/home/turu/mownit/lab7/CSim_visual/CEngine.cpp
+	<iostream>
+	<string>
+	<SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<cmath>
+	<omp.h>
+	"CEngine.h"
+	"CFlags.h"
+
+1325898201 /home/turu/mownit/lab7/CSim_visual/CEngine.h
+	<cstdlib>
+	<iostream>
+	<SDL.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	"ICSystem.h"
+	"CVector.h"
+	"CFlags.h"
+	"Camera.h"
+
+1325898386 /home/turu/mownit/lab7/CSim_visual/Camera.h
+	"CVector.h"
+
+1324764383 source:/home/turu/mownit/lab7/CSim_visual/CFlags.cpp
+	"CFlags.h"
+
+1326031849 source:/home/turu/mownit/lab7/CSim_visual/CPlayer.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CPlayer.h"
+
+1326031720 /home/turu/mownit/lab7/CSim_visual/CPlayer.h
+	<iostream>
+	<deque>
+	"CVector.h"
+	"ICSystem.h"
+	"CRepBody.h"
+
+1325902347 /home/turu/mownit/lab7/CSim_visual/CRepBody.h
+	<iostream>
+	<vector>
+	<cmath>
+	<string>
+	<fstream>
+	"ICSystem.h"
+	"CVector.h"
+
+1325902472 source:/home/turu/mownit/lab7/CSim_visual/CRepBody.cpp
+	<iostream>
+	<string>
+	<cstdlib>
+	<fstream>
+	"CVector.h"
+	"CRepBody.h"
+
+1326243192 source:/home/turu/mownit/lab7/CSim_visual/CSystem.cpp
+	<iostream>
+	<sys/types.h>
+	<sys/stat.h>
+	<string>
+	<cstdlib>
+	<fstream>
+	<omp.h>
+	"CVector.h"
+	"CSystem.h"
+	"CFlags.h"
+
+1326242031 /home/turu/mownit/lab7/CSim_visual/CSystem.h
+	<iostream>
+	<vector>
+	<deque>
+	<fstream>
+	"CVector.h"
+	"ICSystem.h"
+	"CBody.h"
+
+1326242553 source:/home/turu/mownit/lab7/CSim_visual/CVector.cpp
+	<iostream>
+	<iterator>
+	<cstdlib>
+	<cstring>
+	<cmath>
+	"CVector.h"
+
+1325898683 source:/home/turu/mownit/lab7/CSim_visual/Camera.cpp
+	"Camera.h"
+
+1326221217 source:/home/turu/mownit/lab7/CSim_visual/main.cpp
+	<cstdlib>
+	<cstring>
+	<SDL.h>
+	<iostream>
+	<cmath>
+	<unistd.h>
+	<omp.h>
+	"CVector.h"
+	"CFlags.h"
+	"ICSystem.h"
+	"CSystem.h"
+	"CPlayer.h"
+	"CEngine.h"
+

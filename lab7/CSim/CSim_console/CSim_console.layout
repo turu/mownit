@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="CFlags.cpp" open="0" top="0" tabpos="5">
+		<Cursor position="50" topLine="0" />
+	</File>
+	<File name="CFlags.h" open="0" top="0" tabpos="4">
+		<Cursor position="446" topLine="0" />
+	</File>
+	<File name="CVector.cpp" open="0" top="0" tabpos="3">
+		<Cursor position="165" topLine="33" />
+	</File>
+	<File name="CVector.h" open="0" top="0" tabpos="2">
+		<Cursor position="282" topLine="24" />
+	</File>
+	<File name="main.cpp" open="0" top="0" tabpos="0">
+		<Cursor position="4558" topLine="96" />
+	</File>
+	<File name="version.h" open="0" top="0" tabpos="0">
+		<Cursor position="524" topLine="6" />
+	</File>
+</CodeBlocks_layout_file>
