@@ -1,5 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <math.h>
+#include <time.h>
 
 #define SIZE 70
 #define MAX_Z 10
@@ -9,15 +11,83 @@
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 
+double gaussian(double x, double y, double x0, double y0, double A, double a, double b, double c) {
+    return A * exp(-1*(a*(x - x0)*(x - x0) + 2*b*(x - x0)*(y - y0) + c*(y - y0)*(y - y0)));
+}
+
+typedef struct moisture_pattern {
+    int bell_cnt;
+    double * x;
+    double * y;
+    double * A;
+} moisture_pattern;
+
+moisture_pattern * create_random_moisture_pattern(int bell_cnt, double x_min, double x_max,
+                                                         double y_min, double y_max, double A_max) {
+    srand(time(NULL));
+    moisture_pattern * pattern = (moisture_pattern *) malloc(sizeof(moisture_pattern));
+
+    pattern->bell_cnt = bell_cnt;
+    pattern->x = (double*) malloc(sizeof(double)*bell_cnt);
+    pattern->y = (double*) malloc(sizeof(double)*bell_cnt);
+    pattern->A = (double*) malloc(sizeof(double)*bell_cnt);
+    while (bell_cnt--) {
+        double ratio = rand() % 100;
+        double x = x_min + ratio * (x_max - x_min) / 100.;
+        ratio = rand() % 100;
+        double y = y_min + ratio * (y_max - y_min) / 100.;
+        ratio = rand() % 100;
+        double A = ratio * A_max / 100.;
+        pattern->x[bell_cnt] = x;
+        pattern->y[bell_cnt] = y;
+        pattern->A[bell_cnt] = A;
+    }
+
+    return pattern;
+}
+
+void delete_moisture_pattern(moisture_pattern * pattern) {
+    free(pattern->x);
+    free(pattern->y);
+    free(pattern->A);
+    free(pattern);
+}
+
+double eval_moisture_pattern(double x, double y, moisture_pattern * pattern) {
+    double a = 0.1, b = 0, c = 0.1;
+    double res = 0;
+    int i;
+    for (i = 0; i < pattern->bell_cnt; i++) {
+        res += gaussian(x, y, pattern->x[i], pattern->y[i], pattern->A[i], a, b, c);
+    }
+    return res;
+}
 
 double h[SIZE][SIZE];
 
-double f1(double x) {
-    return MAX_Z * x*x / (SIZE * SIZE);
+void init_value(moisture_pattern * pattern) {
+    int i, j;
+    for (i = 0; i < SIZE; i++) {
+        for (j = 0; j < SIZE; j++) {
+            h[i][j] = eval_moisture_pattern(i, j, pattern);
+            //printf("%f ", h[i][j]);
+        }
+    }
 }
 
-double f2(double x) {
-    return MAX_Z - f1(x);
+void impose_conditions(){
+    int i,j;
+    for (i = 0; i < SIZE; i++) {
+        h[0][i] = 0;
+        h[SIZE-1][i] = 0;
+        h[i][0] = 0;
+        h[i][SIZE-1] = 0;
+    }
+}
+
+void init_sim(moisture_pattern * pattern) {
+    init_value(pattern);
+    impose_conditions();
 }
 
 int update(int i, int j) {
@@ -48,19 +118,6 @@ void output_data(char* name){
     fclose(f);
 }
 
-void impose_conditions(){
-    int i,j;
-    for (i = 0; i < SIZE; i++) {
-        for (j = 0; j < SIZE; j++) {
-            h[i][j] = 0;
-        }
-    }
-    for (i = 0; i < SIZE; i++) {
-        h[0][i] = f1((double)i);
-        h[SIZE-1][i] = f2((double)i);
-    }
-}
-
 int iterate(){
     int i,j;
     int stop = STOP_ON;
@@ -76,6 +133,7 @@ int iterate(){
 void solve() {
     while (1) {
         if (iterate() == STOP_ON) break;
+
     }
 }
 
@@ -89,10 +147,12 @@ int main(int argc, char** argv){
     fprintf(f, "set pm3d at s hidden3d 1\n");
     fprintf(f,"splot \"output.dat\" with lines\n");
 
-    impose_conditions();
-    solve();
+    moisture_pattern * pattern = create_random_moisture_pattern(100, 0, SIZE-1, 0, SIZE-1, MAX_Z);
+    init_sim(pattern);
+    //solve();
     output_data("output.dat");
     fclose(f);
+    delete_moisture_pattern(pattern);
 
     system("gnuplot -p plot.p");
     return 0;
