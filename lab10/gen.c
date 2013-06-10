@@ -13,7 +13,7 @@
 #define STOP_OFF 0
 #define K 0.1
 #define H 1.
-#define ALPHA 1.
+#define ALPHA 0.8
 
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 
@@ -160,7 +160,7 @@ int update(int i, int j, double h_prev_t) {
     }
 
     double prev = h[i][j];
-    h[i][j] = (lambda*(h[i][j+1] + h[i][j-1] + h[i+1][j] + h[i-1][j]) - h_prev_t) / (1. + 4*lambda);
+    h[i][j] = (lambda*(h[i][j+1] + h[i][j-1] + h[i+1][j] + h[i-1][j]) + h_prev_t) / (1. + 4*lambda);
 
     if (ABS(prev - h[i][j]) < ERR) {
         return STOP_ON;
@@ -169,9 +169,7 @@ int update(int i, int j, double h_prev_t) {
     }
 }
 
-int iterate(){
-    static double h_prev[SIZE][SIZE];
-    save_prev(h_prev);
+int iterate(double h_prev[SIZE][SIZE]){
     int i,j;
     int stop = STOP_ON;
     for (i = 0; i < SIZE; i++) {
@@ -183,14 +181,16 @@ int iterate(){
     return stop;
 }
 
-void solve() {
+void solve(double h_prev[SIZE][SIZE]) {
     while (1) {
-        if (iterate() == STOP_ON) break;
+        if (iterate(h_prev) == STOP_ON) break;
     }
 }
 
 void implicit_step() {
-    solve();
+    static double h_prev[SIZE][SIZE];
+    save_prev(h_prev);
+    solve(h_prev);
 }
 
 void step(int mode) {
@@ -255,7 +255,7 @@ int main(int argc, char** argv){
     fprintf(f, "set style line 1 lt 4 lw .5\n");
     fprintf(f, "set pm3d at s hidden3d 1\n");
 
-    play(f, 100, MODE_EXPLICIT);
+    play(f, 100, MODE_IMPLICIT);
     delete_moisture_pattern(pattern);
     fclose(f);
 
