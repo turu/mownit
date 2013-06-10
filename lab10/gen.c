@@ -18,7 +18,7 @@
 #define ABS(x) ((x) < 0 ? -(x) : (x))
 
 double gaussian(double x, double y, double x0, double y0, double A, double a, double b, double c) {
-    return A * exp(-1*(a*(x - x0)*(x - x0) + 2*b*(x - x0)*(y - y0) + c*(y - y0)*(y - y0)));
+    return A * exp(-1.*(a*(x - x0)*(x - x0) + 2.*b*(x - x0)*(y - y0) + c*(y - y0)*(y - y0)));
 }
 
 typedef struct moisture_pattern {
@@ -81,7 +81,6 @@ void delete_moisture_pattern(moisture_pattern * pattern) {
 }
 
 double eval_moisture_pattern(double x, double y, moisture_pattern * pattern) {
-    double a = 0.1, b = 0, c = 0.1;
     double res = 0;
     int i;
     for (i = 0; i < pattern->bell_cnt; i++) {
@@ -104,7 +103,7 @@ void init_value(moisture_pattern * pattern) {
 }
 
 void impose_conditions(){
-    int i,j;
+    int i;
     for (i = 0; i < SIZE; i++) {
         h[0][i] = 0;
         h[SIZE-1][i] = 0;
@@ -218,6 +217,8 @@ int main(int argc, char** argv){
     fprintf(f, "splot \"data/init.dat\" with lines\n");
     fclose(f);
     f = fopen("animate.p", "w");
+    fprintf(f, "set terminal gif animate delay 4\n");
+    fprintf(f, "set output \"animate.gif\"\n");
     fprintf(f, "set iso 30\nset samp 30\nunset key\n");
     fprintf(f, "set xrange[0:%d]\n",SIZE-1);
     fprintf(f, "set yrange[0:%d]\n",SIZE-1);
