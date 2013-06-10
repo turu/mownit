@@ -8,6 +8,7 @@ gen: gen.o
 	mkdir data
 	./gen.out
 	gnuplot animate.p
+	gifsicle -O2 animate.gif -o animate.gif
 
 clean:
 	rm -rvf *.o

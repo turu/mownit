@@ -147,8 +147,8 @@ void explicit_step() {
     int i, j;
     for (i = 1; i < SIZE - 1; i++) {
         for (j = 1; j < SIZE - 1; j++) {
-            h[i][j] = (1. - 4.*lambda)*h[i][j] + lambda*
-                    (h[i+1][j] + h[i-1][j] + h[i][j+1] + h[i][j-1]);
+            h[i][j] = (1. - 4.*lambda)*h_prev[i][j] + lambda*
+                    (h_prev[i+1][j] + h_prev[i-1][j] + h_prev[i][j+1] + h_prev[i][j-1]);
         }
     }
 }
