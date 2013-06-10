@@ -8,7 +8,7 @@
 
 #define SIZE 90
 #define MAX_Z 1
-#define ERR .0001
+#define ERR .001
 #define STOP_ON 1
 #define STOP_OFF 0
 #define K 0.1
@@ -153,13 +153,14 @@ void explicit_step() {
     }
 }
 
-int update(int i, int j) {
+int update(int i, int j, double h_prev_t) {
+    static double lambda = K / (ALPHA * H * H);
     if (i == 0 || i == SIZE-1 || j == 0 || j == SIZE-1) {
         return STOP_ON;
     }
 
     double prev = h[i][j];
-    h[i][j] = (h[i][j+1] + h[i][j-1] + h[i+1][j] + h[i-1][j]) / 4;
+    h[i][j] = (lambda*(h[i][j+1] + h[i][j-1] + h[i+1][j] + h[i-1][j]) - h_prev_t) / (1. + 4*lambda);
 
     if (ABS(prev - h[i][j]) < ERR) {
         return STOP_ON;
@@ -169,11 +170,13 @@ int update(int i, int j) {
 }
 
 int iterate(){
+    static double h_prev[SIZE][SIZE];
+    save_prev(h_prev);
     int i,j;
     int stop = STOP_ON;
     for (i = 0; i < SIZE; i++) {
-        for (j=0;j < SIZE; j++) {
-            stop *= update(i, j);
+        for (j=0; j < SIZE; j++) {
+            stop *= update(i, j, h_prev[i][j]);
         }
     }
 
@@ -187,6 +190,7 @@ void solve() {
 }
 
 void implicit_step() {
+    solve();
 }
 
 void step(int mode) {
