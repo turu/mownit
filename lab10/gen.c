@@ -153,6 +153,39 @@ void explicit_step() {
     }
 }
 
+int update(int i, int j) {
+    if (i == 0 || i == SIZE-1 || j == 0 || j == SIZE-1) {
+        return STOP_ON;
+    }
+
+    double prev = h[i][j];
+    h[i][j] = (h[i][j+1] + h[i][j-1] + h[i+1][j] + h[i-1][j]) / 4;
+
+    if (ABS(prev - h[i][j]) < ERR) {
+        return STOP_ON;
+    } else {
+        return STOP_OFF;
+    }
+}
+
+int iterate(){
+    int i,j;
+    int stop = STOP_ON;
+    for (i = 0; i < SIZE; i++) {
+        for (j=0;j < SIZE; j++) {
+            stop *= update(i, j);
+        }
+    }
+
+    return stop;
+}
+
+void solve() {
+    while (1) {
+        if (iterate() == STOP_ON) break;
+    }
+}
+
 void implicit_step() {
 }
 
