@@ -11,7 +11,7 @@
 #define ERR .0001
 #define STOP_ON 1
 #define STOP_OFF 0
-#define K .01
+#define K 0.1
 #define H 1.
 #define ALPHA 1.
 
@@ -117,21 +117,6 @@ void init_sim(moisture_pattern * pattern) {
     impose_conditions();
 }
 
-int update(int i, int j) {
-    if (i == 0 || i == SIZE-1 || j == 0 || j == SIZE-1) {
-        return STOP_ON;
-    }
-
-    double prev = h[i][j];
-    h[i][j] = (h[i][j+1] + h[i][j-1] + h[i+1][j] + h[i-1][j]) / 4;
-
-    if (ABS(prev - h[i][j]) < ERR) {
-        return STOP_ON;
-    } else {
-        return STOP_OFF;
-    }
-}
-
 void output_data(char* name){
     int i,j;
     FILE * f = fopen(name, "w");
@@ -143,18 +128,6 @@ void output_data(char* name){
     }
 
     fclose(f);
-}
-
-int iterate(){
-    int i,j;
-    int stop = STOP_ON;
-    for (i = 0; i < SIZE; i++) {
-        for (j=0;j < SIZE; j++) {
-            stop *= update(i, j);
-        }
-    }
-
-    return stop;
 }
 
 void save_prev(double store[SIZE][SIZE]) {
@@ -206,7 +179,24 @@ void play(FILE * plot_file, double max_time, int mode) {
     }
 }
 
+double get_max_z() {
+    int i, j;
+    double max = 0;
+    for (i = 0; i < SIZE; i++) {
+        for (j = 0; j < SIZE; j++) {
+            if (h[i][j] > max) {
+                max = h[i][j];
+            }
+        }
+    }
+    return max;
+}
+
 int main(int argc, char** argv){
+    moisture_pattern * pattern = create_random_moisture_pattern(200, 0, SIZE-1, 0, SIZE-1, MAX_Z);
+    init_sim(pattern);
+    output_data("data/init.dat");
+
     FILE * f = fopen("init.p", "w");
     fprintf(f, "set iso 30\nset samp 30\nunset key\n");
     fprintf(f, "set xrange[0:%d]\n",SIZE-1);
@@ -219,17 +209,16 @@ int main(int argc, char** argv){
     f = fopen("animate.p", "w");
     fprintf(f, "set terminal gif animate delay 4\n");
     fprintf(f, "set output \"animate.gif\"\n");
+    fprintf(f, "set view map\n");
     fprintf(f, "set iso 30\nset samp 30\nunset key\n");
     fprintf(f, "set xrange[0:%d]\n",SIZE-1);
     fprintf(f, "set yrange[0:%d]\n",SIZE-1);
+    fprintf(f, "set cbrange[0:%f]\n", get_max_z());
     fprintf(f, "unset surf\n");
     fprintf(f, "set style line 1 lt 4 lw .5\n");
     fprintf(f, "set pm3d at s hidden3d 1\n");
 
-    moisture_pattern * pattern = create_random_moisture_pattern(200, 0, SIZE-1, 0, SIZE-1, MAX_Z);
-    init_sim(pattern);
-    output_data("data/init.dat");
-    play(f, 1, MODE_EXPLICIT);
+    play(f, 100, MODE_EXPLICIT);
     delete_moisture_pattern(pattern);
     fclose(f);
 

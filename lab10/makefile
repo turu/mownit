@@ -7,6 +7,7 @@ gen: gen.o
 	$(CC) -o $@.out $^ $(CFLAGS)
 	mkdir data
 	./gen.out
+	gnuplot animate.p
 
 clean:
 	rm -rvf *.o
